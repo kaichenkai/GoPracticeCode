@@ -12,6 +12,7 @@ package main
 	值传递 　　     （基本数据类型都是值传递）
 	引用传递          （指针，slice，map，chan，interface）
 	注意：无论是值传递还是引用传递，传递给函数的都是变量的副本，不过，值传递是对值的拷贝，引用传递是地址的拷贝，一般来说，地址拷贝更为高效，而值拷贝取决于拷贝对象的大小，对象越大，则性能越低
+	传递参数时，如果参数是同一种类型只声明一次参数类型，例如：a int, b int --> a, b int
 
 	返回值命名：
 	返回值不需要定义，直接使用（命名的返回值变量的默认值为类型的默认值，即数值为 0，字符串为 ""，布尔为 false、指针为 nil）
@@ -62,7 +63,8 @@ func main() {
 	f("world")//调用
 }
 
-func calc(a int, b int) int {
+//func calc(a int, b int) int {
+func calc(a, b int) int {
 	var c int = a + b
 	return c
 }
